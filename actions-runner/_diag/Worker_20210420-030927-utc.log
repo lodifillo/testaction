@@ -2598,3 +2598,467 @@
 [2021-04-20 03:10:01Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
 [2021-04-20 03:10:01Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
 [2021-04-20 03:10:01Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record '64195e42-44eb-5e07-91ab-2f7354f198e9', success rate: 1/1.
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] Finished process 22132 with exit code 0, and elapsed time 00:00:12.3743091.
+[2021-04-20 03:10:06Z INFO StepsRunner] Step result: 
+[2021-04-20 03:10:06Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-04-20 03:10:06Z INFO StepsRunner] Current state: job state = ''
+[2021-04-20 03:10:06Z INFO StepsRunner] Processing step: DisplayName='Deploy to s3'
+[2021-04-20 03:10:06Z INFO StepsRunner] Initialize Env context for step
+[2021-04-20 03:10:06Z INFO StepsRunner] Evaluating: success()
+[2021-04-20 03:10:06Z INFO StepsRunner] Result: true
+[2021-04-20 03:10:06Z INFO StepsRunner] Starting the step.
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:06Z INFO StepsRunner] Which: 'chcp'
+[2021-04-20 03:10:06Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] Process started with process id 13500, waiting for process exit.
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] Finished process 13500 with exit code 0, and elapsed time 00:00:00.0150032.
+[2021-04-20 03:10:06Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:10:06Z INFO ActionRunner] Write event payload to C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:10:06Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-04-20 03:10:06Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command error
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command group
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-04-20 03:10:06Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-04-20 03:10:06Z INFO ScriptHandler] Which: 'pwsh'
+[2021-04-20 03:10:06Z INFO ScriptHandler] Not found.
+[2021-04-20 03:10:06Z INFO ScriptHandler] Defaulting to powershell
+[2021-04-20 03:10:06Z INFO ScriptHandler] Which: 'powershell'
+[2021-04-20 03:10:06Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:06Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:10:06Z INFO ScriptHandler] Which: 'pwsh'
+[2021-04-20 03:10:06Z INFO ScriptHandler] Not found.
+[2021-04-20 03:10:06Z INFO ScriptHandler] Defaulting to powershell
+[2021-04-20 03:10:06Z INFO ScriptHandler] Which: 'powershell'
+[2021-04-20 03:10:06Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\bb2d4ba6-6a63-4234-8cba-96201a2e2ea2.ps1'"'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\testaction\testaction'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:10:06Z INFO ProcessInvokerWrapper] Process started with process id 22332, waiting for process exit.
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] Finished process 22332 with exit code 1, and elapsed time 00:00:00.3321829.
+[2021-04-20 03:10:07Z INFO StepsRunner] Step result: Failed
+[2021-04-20 03:10:07Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2021-04-20 03:10:07Z INFO StepsRunner] Current state: job state = 'Failed'
+[2021-04-20 03:10:07Z INFO StepsRunner] Processing step: DisplayName='Post Cache node modules'
+[2021-04-20 03:10:07Z INFO StepsRunner] Initialize Env context for step
+[2021-04-20 03:10:07Z INFO StepsRunner] Evaluating: success()
+[2021-04-20 03:10:07Z INFO StepsRunner] Result: false
+[2021-04-20 03:10:07Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2021-04-20 03:10:07Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2021-04-20 03:10:07Z INFO StepsRunner] Current state: job state = 'Failed'
+[2021-04-20 03:10:07Z INFO StepsRunner] Processing step: DisplayName='Post Checkout source code.'
+[2021-04-20 03:10:07Z INFO StepsRunner] Initialize Env context for step
+[2021-04-20 03:10:07Z INFO StepsRunner] Evaluating: always()
+[2021-04-20 03:10:07Z INFO StepsRunner] Result: true
+[2021-04-20 03:10:07Z INFO StepsRunner] Starting the step.
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:07Z INFO StepsRunner] Which: 'chcp'
+[2021-04-20 03:10:07Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] Process started with process id 21892, waiting for process exit.
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] Finished process 21892 with exit code 0, and elapsed time 00:00:00.0132273.
+[2021-04-20 03:10:07Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:10:07Z INFO ActionManager] Load action that reference repository from 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\actions\checkout\v2'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-04-20 03:10:07Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-04-20 03:10:07Z INFO ActionManager] Action node.js file: dist/index.js.
+[2021-04-20 03:10:07Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:10:07Z INFO ActionRunner] Write event payload to C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:10:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "lodifillo/testaction"
+}
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2021-04-20 03:10:07Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2021-04-20 03:10:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command error
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command group
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-04-20 03:10:07Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:07Z INFO HostContext] Well known directory 'Externals': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\externals'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   File name: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\externals\node12\bin\node.exe'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Arguments: '"C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\actions\checkout\v2\dist/index.js"'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\testaction\testaction'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:10:07Z INFO ProcessInvokerWrapper] Process started with process id 22064, waiting for process exit.
+[2021-04-20 03:10:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4defa5a8-59ab-5956-f82d-0fcf5fe70b66', success rate: 1/1.
+[2021-04-20 03:10:07Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-04-20 03:10:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4defa5a8-59ab-5956-f82d-0fcf5fe70b66', success rate: 1/1.
+[2021-04-20 03:10:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd42f4b27-e75d-4227-8b7c-13f257ec8ed8', success rate: 1/1.
+[2021-04-20 03:10:09Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-04-20 03:10:09Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2021-04-20 03:10:09Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd42f4b27-e75d-4227-8b7c-13f257ec8ed8', success rate: 1/1.
+[2021-04-20 03:10:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd42f4b27-e75d-4227-8b7c-13f257ec8ed8', success rate: 1/1.
+[2021-04-20 03:10:11Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:11Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:11Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:10:11Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:11Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:10:11Z INFO ProcessInvokerWrapper] Finished process 22064 with exit code 0, and elapsed time 00:00:03.9044679.
+[2021-04-20 03:10:11Z INFO StepsRunner] Step result: 
+[2021-04-20 03:10:11Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-04-20 03:10:11Z INFO StepsRunner] Current state: job state = 'Failed'
+[2021-04-20 03:10:11Z INFO JobRunner] Finalize job.
+[2021-04-20 03:10:11Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:11Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:11Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:10:11Z INFO JobExtension] Initialize Env context
+[2021-04-20 03:10:11Z INFO JobExtension] Initialize steps context
+[2021-04-20 03:10:11Z INFO JobExtension] Total accessible running process: 242.
+[2021-04-20 03:10:11Z INFO JobExtension] Inspecting process environment variables. PID: 6712 (WmiPrvSE)
+[2021-04-20 03:10:11Z WARN JobExtension] Ignore exception during read process environment variables: 액세스가 거부되었습니다.
+[2021-04-20 03:10:11Z INFO JobRunner] Job result after all job steps finish: Failed
+[2021-04-20 03:10:11Z INFO JobRunner] Completing the job execution context.
+[2021-04-20 03:10:11Z INFO JobRunner] Shutting down the job server queue.
+[2021-04-20 03:10:11Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2021-04-20 03:10:11Z INFO JobServerQueue] Try to append 1 batches web console lines for record '45b2a10c-7341-48df-b49e-76309d016787', success rate: 1/1.
+[2021-04-20 03:10:12Z INFO JobServerQueue] All queue process task stopped.
+[2021-04-20 03:10:12Z INFO JobServerQueue] Web console line queue drained.
+[2021-04-20 03:10:12Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2021-04-20 03:10:13Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2021-04-20 03:10:13Z INFO JobServerQueue] File upload queue drained.
+[2021-04-20 03:10:13Z INFO JobServerQueue] Timeline update queue drained.
+[2021-04-20 03:10:13Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2021-04-20 03:10:13Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp
+[2021-04-20 03:10:13Z INFO JobRunner] Raising job completed event.
+[2021-04-20 03:10:13Z INFO Worker] Job completed.
