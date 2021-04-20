@@ -1,5 +1,5 @@
 <template>
-  <div class="test">git action Test again test</div>
+  <div class="test">git action Test</div>
 </template>
 
 <script>
