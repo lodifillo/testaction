@@ -1,5 +1,7 @@
 <template>
-  <div class="test">git action Test</div>
+  <div class="test">git action Test
+    <p>test page</p>
+  </div>
 </template>
 
 <script>
