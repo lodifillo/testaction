@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "lodifillo/testaction",
+  "pipelineDirectory": "testaction",
+  "workspaceDirectory": "testaction\\testaction",
+  "repositories": {
+    "lodifillo/testaction": {
+      "repositoryPath": "testaction\\testaction",
+      "lastRunOn": "04/20/2021 12:09:27 +09:00"
+    }
+  },
+  "lastRunOn": "04/20/2021 12:09:27 +09:00"
+}

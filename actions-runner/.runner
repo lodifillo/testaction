@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 3,
+  "agentName": "DESKTOP-KJSEIT9",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelines.actions.githubusercontent.com/vo6y0N1HgAHDxes0D9agxXDGpUYLvGc0fuL3Q5vCTxeGJzKiIS",
+  "gitHubUrl": "https://github.com/lodifillo/testaction",
+  "workFolder": "_work"
+}

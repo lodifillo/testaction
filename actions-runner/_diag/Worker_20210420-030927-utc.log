@@ -1,0 +1,2600 @@
+[2021-04-20 03:09:27Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known config file 'Credentials': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.credentials'
+[2021-04-20 03:09:27Z INFO Worker] Version: 2.277.1
+[2021-04-20 03:09:27Z INFO Worker] Commit: 183a3dd9a0d4d51feddc5fe9fa6c3b5f8b08343d
+[2021-04-20 03:09:27Z INFO Worker] Culture: ko-KR
+[2021-04-20 03:09:27Z INFO Worker] UI Culture: ko-KR
+[2021-04-20 03:09:27Z INFO Worker] Waiting to receive the job message from the channel.
+[2021-04-20 03:09:27Z INFO Worker] Message received.
+[2021-04-20 03:09:27Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/blank.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v2",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 11,
+        "col": 15,
+        "lit": "Checkout source code."
+      },
+      "condition": "success()",
+      "id": "e4b38c0f-6035-56ec-f78c-2cac0ce98d59",
+      "name": "actionscheckout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/cache",
+        "ref": "v1",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 14,
+        "col": 15,
+        "lit": "Cache node modules"
+      },
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 17,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 17,
+              "col": 11,
+              "lit": "path"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 17,
+              "col": 17,
+              "lit": "node_modules"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 18,
+              "col": 11,
+              "lit": "key"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 18,
+              "col": 16,
+              "expr": "format('{0}-build-{1}', runner.OS, hashFiles('**/package-lock.json'))"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 19,
+              "col": 11,
+              "lit": "restore-keys"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 19,
+              "col": 25,
+              "expr": "format('{0}-build-\n{1}-\n', runner.OS, runner.OS)"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "a04c83ac-b35b-5e6c-22c8-b60f8cc735cb",
+      "name": "actionscache"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 23,
+        "col": 15,
+        "lit": "Install Dependencies"
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 24,
+              "col": 14,
+              "lit": "npm install"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "26f1c419-bc2c-554c-71b6-9aa612d1c993",
+      "name": "run1"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 26,
+        "col": 15,
+        "lit": "Build"
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 27,
+              "col": 14,
+              "lit": "npm run build"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "64195e42-44eb-5e07-91ab-2f7354f198e9",
+      "name": "run2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 29,
+        "col": 15,
+        "lit": "Deploy to s3"
+      },
+      "environment": {
+        "type": 2,
+        "file": 1,
+        "line": 31,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 31,
+              "col": 11,
+              "lit": "AWS_ACCESS_KEY_ID"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 31,
+              "col": 30,
+              "expr": "secrets.AWS_ACCESS_KEY_ID"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 32,
+              "col": 11,
+              "lit": "AWS_SECRET_ACCESS_KEY"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 32,
+              "col": 34,
+              "expr": "secrets.AWS_SECRET_ACCESS_KEY"
+            }
+          }
+        ]
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 33,
+              "col": 14,
+              "lit": "aws s3 cp \\\n  --recursive \\\n  --region ap-northeast-2 \\\n  dist s3://bucket.domain.com\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "4defa5a8-59ab-5956-f82d-0fcf5fe70b66",
+      "name": "run3"
+    }
+  ],
+  "variables": {
+    "AWS_ACCESS_KEY_ID": {
+      "value": "***",
+      "isSecret": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.isScheduled": {
+      "value": "False"
+    },
+    "system": {
+      "value": "actions"
+    },
+    "system.hosttype": {
+      "value": "actions"
+    },
+    "system.servertype": {
+      "value": "Hosted"
+    },
+    "system.culture": {
+      "value": "en-US"
+    },
+    "system.collectionId": {
+      "value": "d0b7cc2a-27d4-4fd8-9ea3-b1eaabd5e607"
+    },
+    "system.collectionUri": {
+      "value": "https://pipelines.actions.githubusercontent.com/vo6y0N1HgAHDxes0D9agxXDGpUYLvGc0fuL3Q5vCTxeGJzKiIS/"
+    },
+    "system.taskDefinitionsUri": {
+      "value": "https://pipelines.actions.githubusercontent.com/vo6y0N1HgAHDxes0D9agxXDGpUYLvGc0fuL3Q5vCTxeGJzKiIS/"
+    },
+    "system.pipelineStartTime": {
+      "value": "2021-04-20 03:09:22+00:00"
+    },
+    "system.definitionId": {
+      "value": "3"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UseContextNameForGITHUBACTION": {
+      "value": "true"
+    },
+    "system.teamProjectId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "build.buildId": {
+      "value": "2"
+    },
+    "build.containerId": {
+      "value": "262537"
+    },
+    "system.workflowFilePath": {
+      "value": ".github/workflows/blank.yml"
+    },
+    "system.definitionName": {
+      "value": "testaction"
+    },
+    "system.planId": {
+      "value": "12160eb8-2ea2-4dd0-b385-9c76d9723faa"
+    },
+    "system.timelineId": {
+      "value": "12160eb8-2ea2-4dd0-b385-9c76d9723faa"
+    },
+    "system.stageDisplayName": {
+      "value": "__default"
+    },
+    "system.stageId": {
+      "value": "96ac2280-8cb4-5df5-99de-dd2da759617d"
+    },
+    "system.stageName": {
+      "value": "__default"
+    },
+    "system.stageAttempt": {
+      "value": "1"
+    },
+    "system.phaseDisplayName": {
+      "value": "build"
+    },
+    "system.phaseId": {
+      "value": "6884a131-87da-5381-61f3-d7acc3b91d76"
+    },
+    "system.phaseName": {
+      "value": "build"
+    },
+    "system.phaseAttempt": {
+      "value": "1"
+    },
+    "system.jobIdentifier": {
+      "value": "build.__default"
+    },
+    "system.jobAttempt": {
+      "value": "1"
+    },
+    "System.JobPositionInPhase": {
+      "value": "1"
+    },
+    "System.TotalJobsInPhase": {
+      "value": "1"
+    },
+    "system.github.job": {
+      "value": "build"
+    },
+    "system.jobDisplayName": {
+      "value": "build"
+    },
+    "system.jobId": {
+      "value": "ca395085-040a-526b-2ce8-bdc85f692774"
+    },
+    "system.jobName": {
+      "value": "__default"
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Actions\":\"write\",\"Checks\":\"write\",\"Contents\":\"write\",\"Deployments\":\"write\",\"Issues\":\"write\",\"Metadata\":\"read\",\"Packages\":\"write\",\"PullRequests\":\"write\",\"RepositoryProjects\":\"write\",\"SecurityEvents\":\"write\",\"Statuses\":\"write\"}"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "PipelineAgentJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "Actions",
+    "version": 13,
+    "planId": "12160eb8-2ea2-4dd0-b385-9c76d9723faa",
+    "planGroup": "Actions:00000000-0000-0000-0000-000000000000:1",
+    "artifactUri": "vstfs:///Build/Build/2",
+    "artifactLocation": null,
+    "definition": {
+      "_links": {},
+      "id": 3,
+      "name": "testaction"
+    },
+    "owner": {
+      "_links": {},
+      "id": 3,
+      "name": "lodifillo"
+    }
+  },
+  "timeline": {
+    "id": "12160eb8-2ea2-4dd0-b385-9c76d9723faa",
+    "changeId": 5,
+    "location": null
+  },
+  "jobId": "ca395085-040a-526b-2ce8-bdc85f692774",
+  "jobDisplayName": "build",
+  "jobName": "__default",
+  "requestId": 1,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "d0b7cc2a-27d4-4fd8-9ea3-b1eaabd5e607",
+          "ServerName": "vo6y0N1HgAHDxes0D9agxXDGpUYLvGc0fuL3Q5vCTxeGJzKiIS",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/vo6y0N1HgAHDxes0D9agxXDGpUYLvGc0fuL3Q5vCTxeGJzKiIS/"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://pipelines.actions.githubusercontent.com/vo6y0N1HgAHDxes0D9agxXDGpUYLvGc0fuL3Q5vCTxeGJzKiIS/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/master"
+        },
+        {
+          "k": "sha",
+          "v": "eb3bd142be0e435bff2f6b1486a80008cf498b00"
+        },
+        {
+          "k": "repository",
+          "v": "lodifillo/testaction"
+        },
+        {
+          "k": "repository_owner",
+          "v": "lodifillo"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/lodifillo/testaction.git"
+        },
+        {
+          "k": "run_id",
+          "v": "765734980"
+        },
+        {
+          "k": "run_number",
+          "v": "2"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "actor",
+          "v": "lodifillo"
+        },
+        {
+          "k": "workflow",
+          "v": "deploy-to-s3-example"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "eb3bd142be0e435bff2f6b1486a80008cf498b00"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "06a700017ef7c82bee45c9064acb57e06ab58999"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "82491698+lodifillo@users.noreply.github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "lodifillo"
+                              },
+                              {
+                                "k": "username",
+                                "v": "lodifillo"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "noreply@github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "GitHub"
+                              },
+                              {
+                                "k": "username",
+                                "v": "web-flow"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "eb3bd142be0e435bff2f6b1486a80008cf498b00"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Update blank.yml\n\nos commit"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2021-04-20T12:09:20+09:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "b642f48acb37c1846201c21366476eca866f4b6f"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/lodifillo/testaction/commit/eb3bd142be0e435bff2f6b1486a80008cf498b00"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/lodifillo/testaction/compare/06a700017ef7...eb3bd142be0e"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "82491698+lodifillo@users.noreply.github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "lodifillo"
+                          },
+                          {
+                            "k": "username",
+                            "v": "lodifillo"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "noreply@github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "GitHub"
+                          },
+                          {
+                            "k": "username",
+                            "v": "web-flow"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "eb3bd142be0e435bff2f6b1486a80008cf498b00"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Update blank.yml\n\nos commit"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2021-04-20T12:09:20+09:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "b642f48acb37c1846201c21366476eca866f4b6f"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/lodifillo/testaction/commit/eb3bd142be0e435bff2f6b1486a80008cf498b00"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "82491698+lodifillo@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "lodifillo"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/master"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/lodifillo/testaction.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1618887517.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "master"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "lodifillo/testaction"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/lodifillo/testaction.git"
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/lodifillo/testaction"
+                    },
+                    {
+                      "k": "id",
+                      "v": 359665756.0
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "Vue"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "master"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "testaction"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDEwOlJlcG9zaXRvcnkzNTk2NjU3NTY="
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/82491698?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "82491698+lodifillo@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/lodifillo/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/lodifillo/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/lodifillo/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/lodifillo/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/lodifillo"
+                          },
+                          {
+                            "k": "id",
+                            "v": 82491698.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "lodifillo"
+                          },
+                          {
+                            "k": "name",
+                            "v": "lodifillo"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjgyNDkxNjk4"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/lodifillo/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/lodifillo/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/lodifillo/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/lodifillo/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/lodifillo/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/lodifillo"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1618888160.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:lodifillo/testaction.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/lodifillo/testaction"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/teams"
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/lodifillo/testaction/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2021-04-20T03:05:37Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/lodifillo/testaction"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/82491698?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/lodifillo/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/lodifillo/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/lodifillo/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/lodifillo/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/lodifillo"
+                    },
+                    {
+                      "k": "id",
+                      "v": 82491698.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "lodifillo"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjgyNDkxNjk4"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/lodifillo/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/lodifillo/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/lodifillo/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/lodifillo/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/lodifillo/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/lodifillo"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        }
+      ]
+    },
+    "needs": {
+      "t": 2
+    },
+    "matrix": null,
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    }
+  }
+}
+[2021-04-20 03:09:27Z INFO JobRunner] Job ID ca395085-040a-526b-2ce8-bdc85f692774
+[2021-04-20 03:09:27Z INFO JobRunner] Creating job server with URL: https://pipelines.actions.githubusercontent.com/vo6y0N1HgAHDxes0D9agxXDGpUYLvGc0fuL3Q5vCTxeGJzKiIS/
+[2021-04-20 03:09:27Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2021-04-20 03:09:27Z INFO Worker] Listening for cancel message from the channel.
+[2021-04-20 03:09:27Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2021-04-20 03:09:27Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2021-04-20 03:09:27Z INFO JobServerQueue] Start process web console line queue.
+[2021-04-20 03:09:27Z INFO JobServerQueue] Start process file upload queue.
+[2021-04-20 03:09:27Z INFO JobServerQueue] Start process timeline update queue.
+[2021-04-20 03:09:27Z INFO ExecutionContext] Initialize GitHub context
+[2021-04-20 03:09:27Z INFO ExecutionContext] Initialize Env context
+[2021-04-20 03:09:27Z INFO ConfigurationStore] currentAssemblyLocation: C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin\Runner.Worker.dll
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO ConfigurationStore] binPath: C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO ConfigurationStore] RootFolder: C:\workspace\vue\vueTest\gittest\testgit\actions-runner
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known config file 'Runner': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.runner'
+[2021-04-20 03:09:27Z INFO ConfigurationStore] ConfigFilePath: C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.runner
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known config file 'Credentials': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.credentials'
+[2021-04-20 03:09:27Z INFO ConfigurationStore] CredFilePath: C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.credentials
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.credentials_migrated'
+[2021-04-20 03:09:27Z INFO ConfigurationStore] MigratedCredFilePath: C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.credentials_migrated
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known config file 'Service': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.service'
+[2021-04-20 03:09:27Z INFO ConfigurationStore] ServiceConfigFilePath: C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.service
+[2021-04-20 03:09:27Z INFO ConfigurationStore] Read setting file: 300 chars
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:27Z INFO JobRunner] Starting the job execution context.
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO JobRunner] Validating directory permissions for: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Tools': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_tool'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:27Z INFO JobRunner] Getting job extension.
+[2021-04-20 03:09:27Z INFO JobRunner] Initialize job. Getting all job steps.
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known config file 'Credentials': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.credentials'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known config file 'SetupInfo': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\.setup_info'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_PipelineMapping\lodifillo/testaction\PipelineFolder.json
+[2021-04-20 03:09:27Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO JobExtension] Downloading actions
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:27Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:28Z INFO JobServerQueue] Try to append 1 batches web console lines for record '11927677-8f0d-4dc5-9997-4cc76cae443d', success rate: 1/1.
+[2021-04-20 03:09:29Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:29Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:29Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:29Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:29Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:29Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:29Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:29Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:29Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f' into C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\_temp_d99d1fa8-dd3b-4561-b6db-dcad2bb22940\8849227c-9ee2-40d8-8c71-022e60703d6f.zip.
+[2021-04-20 03:09:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record '11927677-8f0d-4dc5-9997-4cc76cae443d', success rate: 1/1.
+[2021-04-20 03:09:30Z INFO ActionManager] Finished getting action repository.
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/cache/zipball/70655ec8323daeeaa7ef06d7c56e1b9191396cbe' into C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\_temp_a0bd204c-3a00-453e-9831-326f918cfdc1\492bee01-69f9-4508-b585-2771a7ee516c.zip.
+[2021-04-20 03:09:30Z INFO JobServerQueue] Try to append 1 batches web console lines for record '11927677-8f0d-4dc5-9997-4cc76cae443d', success rate: 1/1.
+[2021-04-20 03:09:30Z INFO ActionManager] Finished getting action repository.
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "outputs-attributes",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node12-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "step-env"
+]
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-04-20 03:09:30Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO ActionManager] Load action that reference repository from 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\actions\checkout\v2'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-04-20 03:09:30Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-04-20 03:09:30Z INFO ActionManager] Action node.js file: dist/index.js.
+[2021-04-20 03:09:30Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Ignore action property author.
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Ignore action property branding.
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Cache",
+  "description": "Cache artifacts like dependencies and build outputs to improve workflow execution time",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "restore-keys"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/restore/index.js",
+    "pre": null,
+    "post": "dist/save/index.js",
+    "cleanupCondition": "success()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-04-20 03:09:30Z INFO ActionManager] Action node.js file: dist/restore/index.js, no more preparation.
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO ActionManager] Load action that reference repository from 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\actions\cache\v1'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Ignore action property author.
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Ignore action property branding.
+[2021-04-20 03:09:30Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Cache",
+  "description": "Cache artifacts like dependencies and build outputs to improve workflow execution time",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "restore-keys"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/restore/index.js",
+    "pre": null,
+    "post": "dist/save/index.js",
+    "cleanupCondition": "success()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-04-20 03:09:30Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-04-20 03:09:30Z INFO ActionManager] Action node.js file: dist/restore/index.js.
+[2021-04-20 03:09:30Z INFO ActionManager] Action post node.js file: dist/save/index.js.
+[2021-04-20 03:09:30Z INFO JobExtension] Adding .
+[2021-04-20 03:09:30Z INFO JobExtension] Adding .
+[2021-04-20 03:09:30Z INFO JobExtension] Adding .
+[2021-04-20 03:09:30Z INFO JobExtension] Adding .
+[2021-04-20 03:09:30Z INFO JobExtension] Adding .
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:30Z INFO JobExtension] Total accessible running process: 241.
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:30Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:30Z INFO JobRunner] Total job steps: 5.
+[2021-04-20 03:09:30Z INFO JobRunner] Run all job steps.
+[2021-04-20 03:09:30Z INFO StepsRunner] Processing step: DisplayName='Checkout source code.'
+[2021-04-20 03:09:30Z INFO StepsRunner] Initialize Env context for step
+[2021-04-20 03:09:31Z INFO StepsRunner] Evaluating: success()
+[2021-04-20 03:09:31Z INFO StepsRunner] Result: true
+[2021-04-20 03:09:31Z INFO StepsRunner] Starting the step.
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:31Z INFO StepsRunner] Which: 'chcp'
+[2021-04-20 03:09:31Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper] Process started with process id 14356, waiting for process exit.
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper] Finished process 14356 with exit code 0, and elapsed time 00:00:00.0714167.
+[2021-04-20 03:09:31Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:31Z INFO ActionManager] Load action that reference repository from 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\actions\checkout\v2'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-04-20 03:09:31Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-04-20 03:09:31Z INFO ActionManager] Action node.js file: dist/index.js.
+[2021-04-20 03:09:31Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2021-04-20 03:09:31Z INFO ExecutionContext] Reserve record order 7 to 12 for post job actions.
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:31Z INFO ActionRunner] Write event payload to C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:31Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "lodifillo/testaction"
+}
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2021-04-20 03:09:31Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2021-04-20 03:09:31Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command error
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command group
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-04-20 03:09:31Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:31Z INFO HostContext] Well known directory 'Externals': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\externals'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   File name: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\externals\node12\bin\node.exe'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Arguments: '"C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\actions\checkout\v2\dist/index.js"'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\testaction\testaction'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:09:31Z INFO ProcessInvokerWrapper] Process started with process id 10840, waiting for process exit.
+[2021-04-20 03:09:31Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:32Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-04-20 03:09:33Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2021-04-20 03:09:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:34Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] Finished process 10840 with exit code 0, and elapsed time 00:00:06.3179677.
+[2021-04-20 03:09:37Z INFO StepsRunner] Step result: 
+[2021-04-20 03:09:37Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-04-20 03:09:37Z INFO StepsRunner] Current state: job state = ''
+[2021-04-20 03:09:37Z INFO StepsRunner] Processing step: DisplayName='Cache node modules'
+[2021-04-20 03:09:37Z INFO StepsRunner] Initialize Env context for step
+[2021-04-20 03:09:37Z INFO StepsRunner] Evaluating: success()
+[2021-04-20 03:09:37Z INFO StepsRunner] Result: true
+[2021-04-20 03:09:37Z INFO StepsRunner] Starting the step.
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:37Z INFO StepsRunner] Which: 'chcp'
+[2021-04-20 03:09:37Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] Process started with process id 22504, waiting for process exit.
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] Finished process 22504 with exit code 0, and elapsed time 00:00:00.0157413.
+[2021-04-20 03:09:37Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:37Z INFO ActionManager] Load action that reference repository from 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\actions\cache\v1'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Actions': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions'
+[2021-04-20 03:09:37Z INFO ActionManifestManager] Ignore action property author.
+[2021-04-20 03:09:37Z INFO ActionManifestManager] Ignore action property branding.
+[2021-04-20 03:09:37Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Cache",
+  "description": "Cache artifacts like dependencies and build outputs to improve workflow execution time",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "restore-keys"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/restore/index.js",
+    "pre": null,
+    "post": "dist/save/index.js",
+    "cleanupCondition": "success()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2021-04-20 03:09:37Z INFO ActionManager] Action pre node.js file: N/A.
+[2021-04-20 03:09:37Z INFO ActionManager] Action node.js file: dist/restore/index.js.
+[2021-04-20 03:09:37Z INFO ActionManager] Action post node.js file: dist/save/index.js.
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Diag': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_diag'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:37Z INFO ActionRunner] Write event payload to C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:37Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-04-20 03:09:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:37Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command error
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command group
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-04-20 03:09:37Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:37Z INFO HostContext] Well known directory 'Externals': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\externals'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   File name: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\externals\node12\bin\node.exe'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Arguments: '"C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_actions\actions\cache\v1\dist/restore/index.js"'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\testaction\testaction'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:09:37Z INFO ProcessInvokerWrapper] Process started with process id 21688, waiting for process exit.
+[2021-04-20 03:09:37Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-04-20 03:09:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e4b38c0f-6035-56ec-f78c-2cac0ce98d59', success rate: 1/1.
+[2021-04-20 03:09:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a04c83ac-b35b-5e6c-22c8-b60f8cc735cb', success rate: 1/1.
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] Finished process 21688 with exit code 0, and elapsed time 00:00:01.4053929.
+[2021-04-20 03:09:39Z INFO StepsRunner] Step result: 
+[2021-04-20 03:09:39Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-04-20 03:09:39Z INFO StepsRunner] Current state: job state = ''
+[2021-04-20 03:09:39Z INFO StepsRunner] Processing step: DisplayName='Install Dependencies'
+[2021-04-20 03:09:39Z INFO StepsRunner] Initialize Env context for step
+[2021-04-20 03:09:39Z INFO StepsRunner] Evaluating: success()
+[2021-04-20 03:09:39Z INFO StepsRunner] Result: true
+[2021-04-20 03:09:39Z INFO StepsRunner] Starting the step.
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:39Z INFO StepsRunner] Which: 'chcp'
+[2021-04-20 03:09:39Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] Process started with process id 21544, waiting for process exit.
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] Finished process 21544 with exit code 0, and elapsed time 00:00:00.0132337.
+[2021-04-20 03:09:39Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:39Z INFO ActionRunner] Write event payload to C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:39Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-04-20 03:09:39Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command error
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command group
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-04-20 03:09:39Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-04-20 03:09:39Z INFO ScriptHandler] Which: 'pwsh'
+[2021-04-20 03:09:39Z INFO ScriptHandler] Not found.
+[2021-04-20 03:09:39Z INFO ScriptHandler] Defaulting to powershell
+[2021-04-20 03:09:39Z INFO ScriptHandler] Which: 'powershell'
+[2021-04-20 03:09:39Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:39Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:39Z INFO ScriptHandler] Which: 'pwsh'
+[2021-04-20 03:09:39Z INFO ScriptHandler] Not found.
+[2021-04-20 03:09:39Z INFO ScriptHandler] Defaulting to powershell
+[2021-04-20 03:09:39Z INFO ScriptHandler] Which: 'powershell'
+[2021-04-20 03:09:39Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\9b45e36d-07bd-474a-b280-c0692528d1a0.ps1'"'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\testaction\testaction'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:09:39Z INFO ProcessInvokerWrapper] Process started with process id 21592, waiting for process exit.
+[2021-04-20 03:09:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a04c83ac-b35b-5e6c-22c8-b60f8cc735cb', success rate: 1/1.
+[2021-04-20 03:09:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record '26f1c419-bc2c-554c-71b6-9aa612d1c993', success rate: 1/1.
+[2021-04-20 03:09:40Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-04-20 03:09:41Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:41Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:41Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:51Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:51Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:51Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] Finished process 21592 with exit code 0, and elapsed time 00:00:15.3353067.
+[2021-04-20 03:09:54Z INFO StepsRunner] Step result: 
+[2021-04-20 03:09:54Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-04-20 03:09:54Z INFO StepsRunner] Current state: job state = ''
+[2021-04-20 03:09:54Z INFO StepsRunner] Processing step: DisplayName='Build'
+[2021-04-20 03:09:54Z INFO StepsRunner] Initialize Env context for step
+[2021-04-20 03:09:54Z INFO StepsRunner] Evaluating: success()
+[2021-04-20 03:09:54Z INFO StepsRunner] Result: true
+[2021-04-20 03:09:54Z INFO StepsRunner] Starting the step.
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:54Z INFO StepsRunner] Which: 'chcp'
+[2021-04-20 03:09:54Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] Process started with process id 21912, waiting for process exit.
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] Finished process 21912 with exit code 0, and elapsed time 00:00:00.0182224.
+[2021-04-20 03:09:54Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:54Z INFO ActionRunner] Write event payload to C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\_github_workflow\event.json
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:54Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2021-04-20 03:09:54Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command set-env
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command set-output
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command save-state
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command add-path
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command warning
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command error
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command debug
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command group
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2021-04-20 03:09:54Z INFO ActionCommandManager] Register action command extension for command echo
+[2021-04-20 03:09:54Z INFO ScriptHandler] Which: 'pwsh'
+[2021-04-20 03:09:54Z INFO ScriptHandler] Not found.
+[2021-04-20 03:09:54Z INFO ScriptHandler] Defaulting to powershell
+[2021-04-20 03:09:54Z INFO ScriptHandler] Which: 'powershell'
+[2021-04-20 03:09:54Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
+[2021-04-20 03:09:54Z INFO HostContext] Well known directory 'Temp': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp'
+[2021-04-20 03:09:54Z INFO ScriptHandler] Which: 'pwsh'
+[2021-04-20 03:09:54Z INFO ScriptHandler] Not found.
+[2021-04-20 03:09:54Z INFO ScriptHandler] Defaulting to powershell
+[2021-04-20 03:09:54Z INFO ScriptHandler] Which: 'powershell'
+[2021-04-20 03:09:54Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] Starting process:
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\_temp\7ba9cabb-d9ad-48a6-90e5-7f42503615d6.ps1'"'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Working directory: 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work\testaction\testaction'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-04-20 03:09:54Z INFO ProcessInvokerWrapper] Process started with process id 22132, waiting for process exit.
+[2021-04-20 03:09:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '26f1c419-bc2c-554c-71b6-9aa612d1c993', success rate: 1/1.
+[2021-04-20 03:09:54Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-04-20 03:09:55Z INFO JobServerQueue] Try to append 1 batches web console lines for record '64195e42-44eb-5e07-91ab-2f7354f198e9', success rate: 1/1.
+[2021-04-20 03:09:55Z INFO JobServerQueue] Try to append 1 batches web console lines for record '64195e42-44eb-5e07-91ab-2f7354f198e9', success rate: 1/1.
+[2021-04-20 03:09:57Z INFO JobServerQueue] Try to append 1 batches web console lines for record '64195e42-44eb-5e07-91ab-2f7354f198e9', success rate: 1/1.
+[2021-04-20 03:10:01Z INFO HostContext] Well known directory 'Bin': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\bin'
+[2021-04-20 03:10:01Z INFO HostContext] Well known directory 'Root': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner'
+[2021-04-20 03:10:01Z INFO HostContext] Well known directory 'Work': 'C:\workspace\vue\vueTest\gittest\testgit\actions-runner\_work'
